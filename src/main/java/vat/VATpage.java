@@ -108,7 +108,6 @@ public class VATpage extends AbstractComponent {
 		String text_priceInclVAT= priceInclVAT_Text.getAttribute("value");
 		Assert.assertEquals(text_priceInclVAT, priceInclVAT_value_Str);
 	}
-
 	
 	public void ProvideVATInput(List<Integer> selectedVATList, float valueAddedTax2, WebDriver driver2)
 	{
@@ -139,7 +138,6 @@ public class VATpage extends AbstractComponent {
 	}
 
 	public void callTest() {
-		// TODO Auto-generated method stub
 		Select sel = new Select(country);
 		sel.selectByValue("1");
 		for (WebElement temp : VATrates_radio)
@@ -147,7 +145,4 @@ public class VATpage extends AbstractComponent {
 			System.out.println(temp.isSelected());
 		}
 	}
-
-
-
 }
