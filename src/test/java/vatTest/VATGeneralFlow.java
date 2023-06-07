@@ -15,14 +15,15 @@ public class VATGeneralFlow extends BaseTest {
 	float priceWithoutVAT = 150;
 	float valueAddedTax = 50;
 
-	@Test(enabled =false)
+	@Test
 	public void LaunchDetails() throws IOException {
 		List<Integer> defaultVATList = new ArrayList<Integer>();
 		defaultVATList.addAll(Arrays.asList(5,20));
 		vat.loadDetails(defaultVATList, defaultCountry);
 	}
 
-	@Test public void Test()
+	@Test(enabled =false)
+	public void Test()
 	{ 
 	vat.callTest();	
 	}

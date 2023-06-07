@@ -66,82 +66,81 @@ public class VATpage extends AbstractComponent {
 		Assert.assertTrue(priceWithoutVAT.isSelected());
 		Assert.assertFalse(valueAddedTax_Radio.isSelected());
 		Assert.assertFalse(priceInclVAT.isSelected());
-		Assert.assertTrue(priceWithoutVAT_Text.isEnabled());
-		// Assert.assertFalse(valueAddedTax_Text.isEnabled());
-		// Assert.assertFalse(priceInclVAT_Text.isEnabled());
+		String text_PWV = priceWithoutVAT_Text.getAttribute("class");
+		Assert.assertTrue(text_PWV.contentEquals("vis biginput R W120"));
+		String text_VAT = valueAddedTax_Text.getAttribute("class");
+		Assert.assertTrue(text_VAT.contentEquals("disabled vis biginput R W120"));
+		String text_PIV = priceInclVAT_Text.getAttribute("class");
+		Assert.assertTrue(text_PIV.contentEquals("disabled vis biginput R W120"));
 	}
 
-	public void checkVATRates(List<Integer> selectedVATList) {
-		for (WebElement temp : VATrates_radio)
-		{
+	public void checkVATRates(List<Integer> VATList) {
+		for (WebElement temp : VATrates_radio) {
 			String VATpercentages = temp.getText();
 			String[] VATnumbers = VATpercentages.split("%");
-			System.out.println(VATnumbers[0]);
 			String VATpercentnumbers = VATnumbers[0].trim();
 			int VATvalue = Integer.parseInt(VATpercentnumbers);
-			Assert.assertTrue(selectedVATList.contains(VATvalue));
+			Assert.assertTrue(VATList.contains(VATvalue));
 		}
 	}
 
-	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList, float priceWithoutVAT2,WebDriver driver) {
-		float selectedVATPercent_int,valueAddedTax_value,priceInclVAT_value;
+	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList, float priceWithoutVAT2, WebDriver driver) {
+		float selectedVATPercent_int, valueAddedTax_value, priceInclVAT_value;
 		Select sel = new Select(country);
 		sel.selectByValue("1");
-		String selectedVATPercent="";
+		String selectedVATPercent = "";
 		checkVATRates(selectedVATList);
 		for (WebElement temp : VATrates_radio) {
 			boolean flag = temp.isSelected();
 			System.out.println(flag);
-			if (flag == true) {	
-				selectedVATPercent=temp.getAttribute("value");
+			if (flag == true) {
+				selectedVATPercent = temp.getAttribute("value");
 			}
 		}
 		priceWithoutVAT_Text.sendKeys(String.valueOf(priceWithoutVAT2));
 		System.out.println(selectedVATPercent);
-		selectedVATPercent_int=Float.parseFloat(selectedVATPercent);	//20
-		valueAddedTax_value=(selectedVATPercent_int*priceWithoutVAT2)/100; //30
-		String strValueAddedTax= String.valueOf(valueAddedTax_value);
-		String text_VAT=valueAddedTax_Text.getAttribute("value");
-		//Assert.assertEquals(strValueAddedTax, text_VAT);
-		priceInclVAT_value=priceWithoutVAT2+valueAddedTax_value;
+		selectedVATPercent_int = Float.parseFloat(selectedVATPercent); // 20
+		valueAddedTax_value = (selectedVATPercent_int * priceWithoutVAT2) / 100; // 30
+		String strValueAddedTax = String.valueOf(valueAddedTax_value);
+		String text_VAT = valueAddedTax_Text.getAttribute("value");
+		// Assert.assertEquals(strValueAddedTax, text_VAT);
+		priceInclVAT_value = priceWithoutVAT2 + valueAddedTax_value;
 		String priceInclVAT_value_Str = String.valueOf(priceInclVAT_value);
-		String text_priceInclVAT= priceInclVAT_Text.getAttribute("value");
+		String text_priceInclVAT = priceInclVAT_Text.getAttribute("value");
 		Assert.assertEquals(text_priceInclVAT, priceInclVAT_value_Str);
 	}
-	
-	public void ProvideVATInput(List<Integer> selectedVATList, float valueAddedTax2, WebDriver driver2)
-	{
-		float selectedVATPercent_int,priceWithoutVAT_value,priceInclVAT_value;
+
+	public void ProvideVATInput(List<Integer> selectedVATList, float valueAddedTax2, WebDriver driver2) {
+		float selectedVATPercent_int, priceWithoutVAT_value, priceInclVAT_value;
 		Select sel = new Select(country);
 		sel.selectByValue("1");
-		String selectedVATPercent=null;
+		String selectedVATPercent = null;
 		checkVATRates(selectedVATList);
 		for (WebElement temp : VATrates_radio) {
 			boolean flag = temp.isSelected();
 			System.out.println(flag);
-			if (flag == true) {	
-				selectedVATPercent=temp.getAttribute("value");
+			if (flag == true) {
+				selectedVATPercent = temp.getAttribute("value");
 			}
 		}
 		valueAddedTax_Radio.click();
 		waitForElementToBeClickable();
 		valueAddedTax_Text.sendKeys(String.valueOf(valueAddedTax2));
-		selectedVATPercent_int=Float.parseFloat(selectedVATPercent);	//20
-		priceWithoutVAT_value=(100 * valueAddedTax2)/(selectedVATPercent_int); //30
-		String strPriceWithoutVAT_value= String.valueOf(priceWithoutVAT_value);
-		String priceWithoutVAT=priceWithoutVAT_Text.getAttribute("value");
+		selectedVATPercent_int = Float.parseFloat(selectedVATPercent); // 20
+		priceWithoutVAT_value = (100 * valueAddedTax2) / (selectedVATPercent_int); // 30
+		String strPriceWithoutVAT_value = String.valueOf(priceWithoutVAT_value);
+		String priceWithoutVAT = priceWithoutVAT_Text.getAttribute("value");
 		Assert.assertEquals(strPriceWithoutVAT_value, priceWithoutVAT);
-		priceInclVAT_value=priceWithoutVAT_value + valueAddedTax2;
+		priceInclVAT_value = priceWithoutVAT_value + valueAddedTax2;
 		String priceInclVAT_value_Str = String.valueOf(priceInclVAT_value);
-		String text_priceInclVAT= priceInclVAT_Text.getAttribute("value");
+		String text_priceInclVAT = priceInclVAT_Text.getAttribute("value");
 		Assert.assertEquals(text_priceInclVAT, priceInclVAT_value_Str);
 	}
 
 	public void callTest() {
 		Select sel = new Select(country);
 		sel.selectByValue("1");
-		for (WebElement temp : VATrates_radio)
-		{
+		for (WebElement temp : VATrates_radio) {
 			System.out.println(temp.isSelected());
 		}
 	}

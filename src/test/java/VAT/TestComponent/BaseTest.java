@@ -27,6 +27,7 @@ public class BaseTest {
 			option.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(option);
 		}
+		driver.manage().deleteAllCookies();
 		return driver;
 	}
 

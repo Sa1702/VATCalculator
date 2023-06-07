@@ -2,20 +2,20 @@
 <testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-04T15:19:10 CEST" name="Default suite" finished-at="2023-06-04T15:19:40 CEST" duration-ms="30514">
+  <suite started-at="2023-06-07T17:56:41 CEST" name="Default suite" finished-at="2023-06-07T17:56:54 CEST" duration-ms="12936">
     <groups>
     </groups>
-    <test started-at="2023-06-04T15:19:10 CEST" name="Default test" finished-at="2023-06-04T15:19:40 CEST" duration-ms="30514">
+    <test started-at="2023-06-07T17:56:41 CEST" name="Default test" finished-at="2023-06-07T17:56:54 CEST" duration-ms="12936">
       <class name="vatTest.VATGeneralFlow">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@4d5b6aac]" started-at="2023-06-04T15:19:10 CEST" name="LaunchApplication" finished-at="2023-06-04T15:19:34 CEST" duration-ms="24303" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-07T17:56:41 CEST" name="LaunchApplication" finished-at="2023-06-07T17:56:51 CEST" duration-ms="9690" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="Test()[pri:0, instance:vatTest.VATGeneralFlow@4d5b6aac]" started-at="2023-06-04T15:19:34 CEST" name="Test" finished-at="2023-06-04T15:19:40 CEST" duration-ms="5657" status="PASS">
+        <test-method signature="LaunchDetails()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-07T17:56:51 CEST" name="LaunchDetails" finished-at="2023-06-07T17:56:54 CEST" duration-ms="2870" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test -->
-        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@4d5b6aac]" started-at="2023-06-04T15:19:40 CEST" name="closingApplication" finished-at="2023-06-04T15:19:40 CEST" duration-ms="496" status="PASS">
+        </test-method> <!-- LaunchDetails -->
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-07T17:56:54 CEST" name="closingApplication" finished-at="2023-06-07T17:56:54 CEST" duration-ms="305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingApplication -->

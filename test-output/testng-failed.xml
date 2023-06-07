@@ -5,9 +5,9 @@
     <classes>
       <class name="vatTest.VATGeneralFlow">
         <methods>
-          <include name="CaclulateUsingVAT"/>
           <include name="closingApplication"/>
           <include name="LaunchApplication"/>
+          <include name="LaunchDetails"/>
         </methods>
       </class> <!-- vatTest.VATGeneralFlow -->
     </classes>
