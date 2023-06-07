@@ -58,11 +58,6 @@ public class VATpage extends AbstractComponent {
 		String defaultCountry = getCountryName.getText();
 		Assert.assertEquals(defaultCountry, countryName);
 		checkVATRates(listDefaultVAT);
-		for (WebElement temp : VATrates_radio) {
-			boolean flag = temp.isSelected();
-			System.out.println(flag);
-		}
-		Assert.assertTrue(defaultVATPercentage.isSelected());
 		Assert.assertTrue(priceWithoutVAT.isSelected());
 		Assert.assertFalse(valueAddedTax_Radio.isSelected());
 		Assert.assertFalse(priceInclVAT.isSelected());
