@@ -1,21 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-07T18:01:15 CEST" name="Default suite" finished-at="2023-06-07T18:01:28 CEST" duration-ms="12382">
+  <suite started-at="2023-06-20T21:10:23 CEST" name="Default suite" finished-at="2023-06-20T21:10:55 CEST" duration-ms="31728">
     <groups>
     </groups>
-    <test started-at="2023-06-07T18:01:15 CEST" name="Default test" finished-at="2023-06-07T18:01:28 CEST" duration-ms="12382">
+    <test started-at="2023-06-20T21:10:23 CEST" name="Default test" finished-at="2023-06-20T21:10:55 CEST" duration-ms="31728">
       <class name="vatTest.VATGeneralFlow">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-07T18:01:16 CEST" name="LaunchApplication" finished-at="2023-06-07T18:01:25 CEST" duration-ms="9048" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:23 CEST" name="LaunchApplication" finished-at="2023-06-20T21:10:30 CEST" duration-ms="6750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="LaunchDetails()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-07T18:01:25 CEST" name="LaunchDetails" finished-at="2023-06-07T18:01:27 CEST" duration-ms="2904" status="PASS">
+        <test-method signature="CaclulateUsingPriceInclVAT()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:30 CEST" name="CaclulateUsingPriceInclVAT" finished-at="2023-06-20T21:10:33 CEST" duration-ms="2888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CaclulateUsingPriceInclVAT -->
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:33 CEST" name="closingApplication" finished-at="2023-06-20T21:10:33 CEST" duration-ms="302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closingApplication -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:33 CEST" name="LaunchApplication" finished-at="2023-06-20T21:10:38 CEST" duration-ms="5253" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="CaclulateUsingPricewihtoutVAT()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:38 CEST" name="CaclulateUsingPricewihtoutVAT" finished-at="2023-06-20T21:10:40 CEST" duration-ms="1809" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable
+  (Session info: chrome=114.0.5735.133)
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.6', java.version: '17.0.4.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [299854387ff41fd23b22154742406d2a, sendKeysToElement {id=A5A12302AA8C7BC81DE7F9EE3B5F3B7B_element_267, value=[Ljava.lang.CharSequence;@4d8286c4}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/jt/n5_wrw3s685...}, goog:chromeOptions: {debuggerAddress: localhost:50928}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50928/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (299854387ff41fd23b22154742406d2a)] -> id: NetPrice]
+Session ID: 299854387ff41fd23b22154742406d2a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=114.0.5735.133)
+Build info: version: '4.9.1', revision: 'eb2032df7f'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.6', java.version: '17.0.4.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [299854387ff41fd23b22154742406d2a, sendKeysToElement {id=A5A12302AA8C7BC81DE7F9EE3B5F3B7B_element_267, value=[Ljava.lang.CharSequence;@4d8286c4}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/jt/n5_wrw3s685...}, goog:chromeOptions: {debuggerAddress: localhost:50928}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50928/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (299854387ff41fd23b22154742406d2a)] -> id: NetPrice]
+Session ID: 299854387ff41fd23b22154742406d2a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:113)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
+at vat.VATpage.ProvidePriceWithoutVATinput(VATpage.java:78)
+at vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT(VATGeneralFlow.java:31)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CaclulateUsingPricewihtoutVAT -->
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:40 CEST" name="closingApplication" finished-at="2023-06-20T21:10:40 CEST" duration-ms="280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closingApplication -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:40 CEST" name="LaunchApplication" finished-at="2023-06-20T21:10:45 CEST" duration-ms="4748" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="CaclulateUsingVAT()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:45 CEST" name="CaclulateUsingVAT" finished-at="2023-06-20T21:10:47 CEST" duration-ms="2242" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CaclulateUsingVAT -->
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:47 CEST" name="closingApplication" finished-at="2023-06-20T21:10:48 CEST" duration-ms="200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closingApplication -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:48 CEST" name="LaunchApplication" finished-at="2023-06-20T21:10:53 CEST" duration-ms="5078" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="LaunchDetails()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:53 CEST" name="LaunchDetails" finished-at="2023-06-20T21:10:55 CEST" duration-ms="1911" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchDetails -->
-        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-07T18:01:27 CEST" name="closingApplication" finished-at="2023-06-07T18:01:28 CEST" duration-ms="334" status="PASS">
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@3e84448c]" started-at="2023-06-20T21:10:55 CEST" name="closingApplication" finished-at="2023-06-20T21:10:55 CEST" duration-ms="196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingApplication -->

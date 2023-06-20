@@ -12,34 +12,38 @@ import VAT.TestComponent.BaseTest;
 public class VATGeneralFlow extends BaseTest {
 	String defaultCountry = "United Kingdom";
 	String selectedCountry = "Austria";
+	int defaultVAT_Austria = 20;
 	float priceWithoutVAT = 150;
 	float valueAddedTax = 50;
+	float priceInclVAT = 300;
 
 	@Test
 	public void LaunchDetails() throws IOException {
 		List<Integer> defaultVATList = new ArrayList<Integer>();
-		defaultVATList.addAll(Arrays.asList(5,20));
+		defaultVATList.addAll(Arrays.asList(5, 20));
 		vat.loadDetails(defaultVATList, defaultCountry);
 	}
 
-	@Test(enabled =false)
-	public void Test()
-	{ 
-	vat.callTest();	
-	}
-	@Test(enabled =false)
+	@Test
 	public void CaclulateUsingPricewihtoutVAT() {
 		List<Integer> selectedVATList = new ArrayList<Integer>();
-		selectedVATList.addAll(Arrays.asList(10,13,20));
-		vat.ProvidePriceWithoutVATinput(selectedVATList, priceWithoutVAT, driver);
+		selectedVATList.addAll(Arrays.asList(10, 13, 20));
+		vat.ProvidePriceWithoutVATinput(selectedVATList, priceWithoutVAT, selectedCountry);
 
 	}
-	
-	@Test(enabled =false)
-	public void CaclulateUsingVAT() {
+
+	@Test
+	public void CaclulateUsingVAT() throws InterruptedException {
 		List<Integer> selectedVATList = new ArrayList<Integer>();
-		selectedVATList.addAll(Arrays.asList(10,13,20));
-		vat.ProvideVATInput(selectedVATList, valueAddedTax, driver);
+		selectedVATList.addAll(Arrays.asList(10, 13, 20));
+		vat.ProvideVATInput(selectedVATList, valueAddedTax, selectedCountry);
+
+	}
+	@Test
+	public void CaclulateUsingPriceInclVAT() {
+		List<Integer> selectedVATList = new ArrayList<Integer>();
+		selectedVATList.addAll(Arrays.asList(10, 13, 20));
+		vat.ProvidePriceInclVATinput(selectedVATList, priceInclVAT, selectedCountry);
 
 	}
 }

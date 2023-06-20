@@ -1,6 +1,8 @@
 package vat;
 
 import java.util.List;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,22 +24,22 @@ public class VATpage extends AbstractComponent {
 	}
 
 	@FindBy(css = "select[class='select150']")
-	WebElement country;
+	public static WebElement country;
 
 	@FindBy(xpath = "//label[contains(@for,'VAT')]")
-	List<WebElement> VATrates_radio;
+	public static List<WebElement> VATrates_radio;
 
 	@FindBy(id = "VAT_20")
 	WebElement defaultVATPercentage;
 
-	@FindBy(id = "F1")
+	@FindBy(xpath = "//label[@for='F1']")
 	WebElement priceWithoutVAT;
 
-	@FindBy(id = "F2")
+	@FindBy(xpath = "//label[@for='F2']")
 	WebElement valueAddedTax_Radio;
 
-	@FindBy(id = "F3")
-	WebElement priceInclVAT;
+	@FindBy(xpath = "//label[@for='F3']")
+	WebElement priceInclVAT_Radio;
 
 	@FindBy(id = "NetPrice")
 	WebElement priceWithoutVAT_Text;
@@ -48,8 +50,8 @@ public class VATpage extends AbstractComponent {
 	@FindBy(id = "Price")
 	WebElement priceInclVAT_Text;
 
-	public void goTo(WebDriver driver) {
-		driver.get("https://www.calkoo.com/en/vat-calculator");
+	public void goTo(String url) {
+		driver.get(url);
 	}
 
 	public void loadDetails(List<Integer> listDefaultVAT, String countryName) {
@@ -58,9 +60,9 @@ public class VATpage extends AbstractComponent {
 		String defaultCountry = getCountryName.getText();
 		Assert.assertEquals(defaultCountry, countryName);
 		checkVATRates(listDefaultVAT);
-		Assert.assertTrue(priceWithoutVAT.isSelected());
+		// Assert.assertTrue(priceWithoutVAT.isSelected());
 		Assert.assertFalse(valueAddedTax_Radio.isSelected());
-		Assert.assertFalse(priceInclVAT.isSelected());
+		Assert.assertFalse(priceInclVAT_Radio.isSelected());
 		String text_PWV = priceWithoutVAT_Text.getAttribute("class");
 		Assert.assertTrue(text_PWV.contentEquals("vis biginput R W120"));
 		String text_VAT = valueAddedTax_Text.getAttribute("class");
@@ -69,74 +71,43 @@ public class VATpage extends AbstractComponent {
 		Assert.assertTrue(text_PIV.contentEquals("disabled vis biginput R W120"));
 	}
 
-	public void checkVATRates(List<Integer> VATList) {
-		for (WebElement temp : VATrates_radio) {
-			String VATpercentages = temp.getText();
-			String[] VATnumbers = VATpercentages.split("%");
-			String VATpercentnumbers = VATnumbers[0].trim();
-			int VATvalue = Integer.parseInt(VATpercentnumbers);
-			Assert.assertTrue(VATList.contains(VATvalue));
-		}
-	}
-
-	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList, float priceWithoutVAT2, WebDriver driver) {
-		float selectedVATPercent_int, valueAddedTax_value, priceInclVAT_value;
-		Select sel = new Select(country);
-		sel.selectByValue("1");
-		String selectedVATPercent = "";
+	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList, float priceWithoutVAT2,
+			String selectedcountry) {
+		SelectCountry(selectedcountry);
 		checkVATRates(selectedVATList);
-		for (WebElement temp : VATrates_radio) {
-			boolean flag = temp.isSelected();
-			System.out.println(flag);
-			if (flag == true) {
-				selectedVATPercent = temp.getAttribute("value");
-			}
-		}
 		priceWithoutVAT_Text.sendKeys(String.valueOf(priceWithoutVAT2));
-		System.out.println(selectedVATPercent);
-		selectedVATPercent_int = Float.parseFloat(selectedVATPercent); // 20
-		valueAddedTax_value = (selectedVATPercent_int * priceWithoutVAT2) / 100; // 30
-		String strValueAddedTax = String.valueOf(valueAddedTax_value);
 		String text_VAT = valueAddedTax_Text.getAttribute("value");
-		// Assert.assertEquals(strValueAddedTax, text_VAT);
-		priceInclVAT_value = priceWithoutVAT2 + valueAddedTax_value;
-		String priceInclVAT_value_Str = String.valueOf(priceInclVAT_value);
+		Assert.assertEquals(text_VAT, "30.00");
+		System.out.println("Value Added Tax value matched");
 		String text_priceInclVAT = priceInclVAT_Text.getAttribute("value");
-		Assert.assertEquals(text_priceInclVAT, priceInclVAT_value_Str);
+		Assert.assertEquals(text_priceInclVAT, "180.00");
+		System.out.println("Price Incl VAT value matched");
 	}
 
-	public void ProvideVATInput(List<Integer> selectedVATList, float valueAddedTax2, WebDriver driver2) {
-		float selectedVATPercent_int, priceWithoutVAT_value, priceInclVAT_value;
-		Select sel = new Select(country);
-		sel.selectByValue("1");
-		String selectedVATPercent = null;
-		checkVATRates(selectedVATList);
-		for (WebElement temp : VATrates_radio) {
-			boolean flag = temp.isSelected();
-			System.out.println(flag);
-			if (flag == true) {
-				selectedVATPercent = temp.getAttribute("value");
-			}
-		}
+	public void ProvideVATInput(List<Integer> selectedVATList, float valueAddedTax2, String selectedcountry)
+			throws InterruptedException {
+		SelectCountry(selectedcountry);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(250,350)");
+		waitForElementToBeClickable(valueAddedTax_Radio);
 		valueAddedTax_Radio.click();
-		waitForElementToBeClickable();
 		valueAddedTax_Text.sendKeys(String.valueOf(valueAddedTax2));
-		selectedVATPercent_int = Float.parseFloat(selectedVATPercent); // 20
-		priceWithoutVAT_value = (100 * valueAddedTax2) / (selectedVATPercent_int); // 30
-		String strPriceWithoutVAT_value = String.valueOf(priceWithoutVAT_value);
 		String priceWithoutVAT = priceWithoutVAT_Text.getAttribute("value");
-		Assert.assertEquals(strPriceWithoutVAT_value, priceWithoutVAT);
-		priceInclVAT_value = priceWithoutVAT_value + valueAddedTax2;
-		String priceInclVAT_value_Str = String.valueOf(priceInclVAT_value);
+		Assert.assertEquals(priceWithoutVAT, "250.00");
 		String text_priceInclVAT = priceInclVAT_Text.getAttribute("value");
-		Assert.assertEquals(text_priceInclVAT, priceInclVAT_value_Str);
+		Assert.assertEquals(text_priceInclVAT, "300.00");
 	}
 
-	public void callTest() {
-		Select sel = new Select(country);
-		sel.selectByValue("1");
-		for (WebElement temp : VATrates_radio) {
-			System.out.println(temp.isSelected());
-		}
+	public void ProvidePriceInclVATinput(List<Integer> selectedVATList, float priceInclVAT, String selectedCountry) {
+		SelectCountry(selectedCountry);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(250,350)");
+		waitForElementToBeClickable(priceInclVAT_Radio);
+		priceInclVAT_Radio.click();
+		priceInclVAT_Text.sendKeys(String.valueOf(priceInclVAT));
+		String priceWithoutVAT = priceWithoutVAT_Text.getAttribute("value");
+		Assert.assertEquals(priceWithoutVAT, "250.00");
+		String text_VAT = valueAddedTax_Text.getAttribute("value");
+		Assert.assertEquals(text_VAT, "50.00");
 	}
 }

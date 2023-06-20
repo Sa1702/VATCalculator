@@ -2,8 +2,10 @@ package VAT.TestComponent;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,6 +17,7 @@ import vat.VATpage;
 public class BaseTest {
 	public WebDriver driver;
 	public VATpage vat;
+	public String url;
 
 	public WebDriver InitializeDriver() throws IOException {
 		Properties prop = new Properties();
@@ -27,6 +30,11 @@ public class BaseTest {
 			option.addArguments("--remote-allow-origins=*");
 			driver = new ChromeDriver(option);
 		}
+		url = prop.getProperty("url");
+		driver.manage().window().maximize();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,500)");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10L));
 		driver.manage().deleteAllCookies();
 		return driver;
 	}
@@ -35,7 +43,7 @@ public class BaseTest {
 	public VATpage LaunchApplication() throws IOException {
 		driver = InitializeDriver();
 		vat = new VATpage(driver);
-		vat.goTo(driver);
+		vat.goTo(url);
 		return vat;
 	}
 
