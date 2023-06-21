@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jun 20 21:10:23 CEST 2023</td>
+<td>Started on:</td><td>Wed Jun 21 18:50:17 CEST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>31 seconds (31728 ms)</td>
+<tr><td>Total time:</td><td>30 seconds (30861 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT()'><b>CaclulateUsingPricewihtoutVAT</b><br>Test class: vatTest.VATGeneralFlow</td>
+<td title='vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT()'><b>CaclulateUsingPricewihtoutVAT</b><br>Test class: vatTest.VATGeneralFlow<br>Parameters: Austria, 125.75, 25.15, 150.90</td>
 <td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=114.0.5735.133)
 Build info: version: &apos;4.9.1&apos;, revision: &apos;eb2032df7f&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;11.6&apos;, java.version: &apos;17.0.4.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [299854387ff41fd23b22154742406d2a, sendKeysToElement {id=A5A12302AA8C7BC81DE7F9EE3B5F3B7B_element_267, value=[Ljava.lang.CharSequence;@4d8286c4}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/jt/n5_wrw3s685...}, goog:chromeOptions: {debuggerAddress: localhost:50928}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50928/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (299854387ff41fd23b22154742406d2a)] -&gt; id: NetPrice]
-Session ID: 299854387ff41fd23b22154742406d2a
+Command: [17db9773b08ce1e3105c945427ab1109, sendKeysToElement {id=1987D34BE25CF36036072A6C15806A6B_element_264, value=[Ljava.lang.CharSequence;@6c42f2a1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/jt/n5_wrw3s685...}, goog:chromeOptions: {debuggerAddress: localhost:55629}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55629/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (17db9773b08ce1e3105c945427ab1109)] -&gt; id: NetPrice]
+Session ID: 17db9773b08ce1e3105c945427ab1109
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -104,9 +104,9 @@ Session ID: 299854387ff41fd23b22154742406d2a
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
 	at vat.VATpage.ProvidePriceWithoutVATinput(VATpage.java:78)
-	at vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT(VATGeneralFlow.java:31)
+	at vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT(VATGeneralFlow.java:32)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -135,16 +135,16 @@ Session ID: 299854387ff41fd23b22154742406d2a
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace794940817", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace794940817'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+</pre></div><a href='#' onClick='toggleBox("stack-trace1508130444", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1508130444'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=114.0.5735.133)
 Build info: version: &apos;4.9.1&apos;, revision: &apos;eb2032df7f&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;11.6&apos;, java.version: &apos;17.0.4.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [299854387ff41fd23b22154742406d2a, sendKeysToElement {id=A5A12302AA8C7BC81DE7F9EE3B5F3B7B_element_267, value=[Ljava.lang.CharSequence;@4d8286c4}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/jt/n5_wrw3s685...}, goog:chromeOptions: {debuggerAddress: localhost:50928}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50928/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on mac (299854387ff41fd23b22154742406d2a)] -&gt; id: NetPrice]
-Session ID: 299854387ff41fd23b22154742406d2a
+Command: [17db9773b08ce1e3105c945427ab1109, sendKeysToElement {id=1987D34BE25CF36036072A6C15806A6B_element_264, value=[Ljava.lang.CharSequence;@6c42f2a1}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.133, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/jt/n5_wrw3s685...}, goog:chromeOptions: {debuggerAddress: localhost:55629}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55629/devtoo..., se:cdpVersion: 114.0.5735.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (17db9773b08ce1e3105c945427ab1109)] -&gt; id: NetPrice]
+Session ID: 17db9773b08ce1e3105c945427ab1109
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -164,9 +164,9 @@ Session ID: 299854387ff41fd23b22154742406d2a
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy17.sendKeys(Unknown Source)
 	at vat.VATpage.ProvidePriceWithoutVATinput(VATpage.java:78)
-	at vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT(VATGeneralFlow.java:31)
+	at vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT(VATGeneralFlow.java:32)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -197,7 +197,7 @@ Session ID: 299854387ff41fd23b22154742406d2a
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>1</td>
-<td>vatTest.VATGeneralFlow@3e84448c</td></tr>
+<td>vatTest.VATGeneralFlow@505fc5a4</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -207,20 +207,15 @@ Session ID: 299854387ff41fd23b22154742406d2a
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='vatTest.VATGeneralFlow.CaclulateUsingPriceInclVAT()'><b>CaclulateUsingPriceInclVAT</b><br>Test class: vatTest.VATGeneralFlow</td>
-<td></td>
-<td>2</td>
-<td>vatTest.VATGeneralFlow@3e84448c</td></tr>
-<tr>
-<td title='vatTest.VATGeneralFlow.CaclulateUsingVAT()'><b>CaclulateUsingVAT</b><br>Test class: vatTest.VATGeneralFlow</td>
-<td></td>
-<td>2</td>
-<td>vatTest.VATGeneralFlow@3e84448c</td></tr>
-<tr>
 <td title='vatTest.VATGeneralFlow.LaunchDetails()'><b>LaunchDetails</b><br>Test class: vatTest.VATGeneralFlow</td>
 <td></td>
-<td>1</td>
-<td>vatTest.VATGeneralFlow@3e84448c</td></tr>
+<td>3</td>
+<td>vatTest.VATGeneralFlow@505fc5a4</td></tr>
+<tr>
+<td title='vatTest.VATGeneralFlow.CaclulateUsingPricewihtoutVAT()'><b>CaclulateUsingPricewihtoutVAT</b><br>Test class: vatTest.VATGeneralFlow<br>Parameters: Austria, 150.00, 30.00, 180.00</td>
+<td></td>
+<td>7</td>
+<td>vatTest.VATGeneralFlow@505fc5a4</td></tr>
 </table><p>
 </body>
 </html>

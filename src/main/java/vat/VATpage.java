@@ -71,16 +71,16 @@ public class VATpage extends AbstractComponent {
 		Assert.assertTrue(text_PIV.contentEquals("disabled vis biginput R W120"));
 	}
 
-	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList, float priceWithoutVAT2,
-			String selectedcountry) {
+	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList,String selectedcountry,String priceWithoutVAT2,String vat, 
+			String priceWithVAT) {
 		SelectCountry(selectedcountry);
 		checkVATRates(selectedVATList);
-		priceWithoutVAT_Text.sendKeys(String.valueOf(priceWithoutVAT2));
+		priceWithoutVAT_Text.sendKeys(priceWithoutVAT2);
 		String text_VAT = valueAddedTax_Text.getAttribute("value");
-		Assert.assertEquals(text_VAT, "30.00");
+		Assert.assertEquals(text_VAT, vat);
 		System.out.println("Value Added Tax value matched");
 		String text_priceInclVAT = priceInclVAT_Text.getAttribute("value");
-		Assert.assertEquals(text_priceInclVAT, "180.00");
+		Assert.assertEquals(text_priceInclVAT, priceWithVAT);
 		System.out.println("Price Incl VAT value matched");
 	}
 
