@@ -5,7 +5,7 @@
     <classes>
       <class name="vatTest.VATGeneralFlow">
         <methods>
-          <include name="CaclulateUsingPricewihtoutVAT" invocation-numbers="1"/>
+          <include name="CaclulateUsingVAT"/>
           <include name="closingApplication"/>
           <include name="LaunchApplication"/>
         </methods>

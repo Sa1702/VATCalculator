@@ -84,18 +84,19 @@ public class VATpage extends AbstractComponent {
 		System.out.println("Price Incl VAT value matched");
 	}
 
-	public void ProvideVATInput(List<Integer> selectedVATList, float valueAddedTax2, String selectedcountry)
+	public void ProvideVATInput(List<Integer> selectedVATList, String country,String priceWithoutVATdata,String vatValue, 
+			String priceInclVATdata)
 			throws InterruptedException {
-		SelectCountry(selectedcountry);
+		SelectCountry(country);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(250,350)");
 		waitForElementToBeClickable(valueAddedTax_Radio);
 		valueAddedTax_Radio.click();
-		valueAddedTax_Text.sendKeys(String.valueOf(valueAddedTax2));
+		valueAddedTax_Text.sendKeys(vatValue);
 		String priceWithoutVAT = priceWithoutVAT_Text.getAttribute("value");
-		Assert.assertEquals(priceWithoutVAT, "250.00");
+		Assert.assertEquals(priceWithoutVAT, priceWithoutVATdata);
 		String text_priceInclVAT = priceInclVAT_Text.getAttribute("value");
-		Assert.assertEquals(text_priceInclVAT, "300.00");
+		Assert.assertEquals(text_priceInclVAT, priceInclVATdata);
 	}
 
 	public void ProvidePriceInclVATinput(List<Integer> selectedVATList, float priceInclVAT, String selectedCountry) {

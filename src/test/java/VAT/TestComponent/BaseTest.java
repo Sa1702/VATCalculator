@@ -3,8 +3,14 @@ package VAT.TestComponent;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Properties;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,7 +38,7 @@ public class BaseTest {
 		}
 		url = prop.getProperty("url");
 		driver.manage().window().maximize();
-		JavascriptExecutor js = (JavascriptExecutor)driver;
+		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10L));
 		driver.manage().deleteAllCookies();
@@ -46,10 +52,8 @@ public class BaseTest {
 		vat.goTo(url);
 		return vat;
 	}
-
 	@AfterMethod
 	public void closingApplication() {
 		driver.close();
 	}
-
 }
