@@ -71,8 +71,8 @@ public class VATpage extends AbstractComponent {
 		Assert.assertTrue(text_PIV.contentEquals("disabled vis biginput R W120"));
 	}
 
-	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList,String selectedcountry,String priceWithoutVAT2,String vat, 
-			String priceWithVAT) {
+	public void ProvidePriceWithoutVATinput(List<Integer> selectedVATList, String selectedcountry,
+			String priceWithoutVAT2, String vat, String priceWithVAT) {
 		SelectCountry(selectedcountry);
 		checkVATRates(selectedVATList);
 		priceWithoutVAT_Text.sendKeys(priceWithoutVAT2);
@@ -84,9 +84,8 @@ public class VATpage extends AbstractComponent {
 		System.out.println("Price Incl VAT value matched");
 	}
 
-	public void ProvideVATInput(List<Integer> selectedVATList, String country,String priceWithoutVATdata,String vatValue, 
-			String priceInclVATdata)
-			throws InterruptedException {
+	public void ProvideVATInput(List<Integer> selectedVATList, String country, String priceWithoutVATdata,
+			String vatValue, String priceInclVATdata) throws InterruptedException {
 		SelectCountry(country);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(250,350)");

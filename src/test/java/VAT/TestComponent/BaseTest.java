@@ -8,7 +8,9 @@ import java.util.Iterator;
 import java.util.Properties;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.JavascriptExecutor;
@@ -51,6 +53,47 @@ public class BaseTest {
 		vat = new VATpage(driver);
 		vat.goTo(url);
 		return vat;
+	}
+	public ArrayList<String> getDataFromExcel(String testCaseName) throws IOException {
+		ArrayList<String> inputData = new ArrayList<String>();
+		FileInputStream fis = new FileInputStream("//Users//Sasi/Workspace//Saranya//VAT//VATCalculator.xlsx");
+		XSSFWorkbook workbook = new XSSFWorkbook(fis);
+		int sheetCount = workbook.getNumberOfSheets();
+		for (int i = 0; i < sheetCount; i++) {
+			if (workbook.getSheetName(i).equalsIgnoreCase("TestData")) {
+				XSSFSheet sheet = workbook.getSheetAt(i);
+				Iterator<Row> getRows = sheet.rowIterator();
+				Row firstRow = getRows.next();
+				Iterator<Cell> getColumns = firstRow.cellIterator();
+				int k = 0;
+				int column = 0;
+				while (getColumns.hasNext()) {
+					Cell value = getColumns.next();
+					if (value.getStringCellValue().equalsIgnoreCase("TestCase")) {
+						column = k;
+					}
+					k++;
+				}
+				while (getRows.hasNext()) {
+					Row iterateRow = getRows.next();
+					if (iterateRow.getCell(column).getStringCellValue().equalsIgnoreCase(testCaseName)) {
+						Iterator<Cell> dataColumn = iterateRow.cellIterator();
+						while (dataColumn.hasNext()) {
+							Cell columnValue = dataColumn.next();
+							if (columnValue.getCellType() == CellType.STRING) {
+
+								inputData.add(columnValue.getStringCellValue());
+
+							} else {
+								inputData.add(NumberToTextConverter.toText(columnValue.getNumericCellValue()));
+							}
+						}
+					}
+				}
+			}
+		}
+		workbook.close();
+		return inputData;
 	}
 	@AfterMethod
 	public void closingApplication() {

@@ -1,33 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-22T18:22:36 CEST" name="Default suite" finished-at="2023-06-22T18:23:01 CEST" duration-ms="24690">
+  <suite started-at="2023-07-18T16:37:48 CEST" name="Default suite" finished-at="2023-07-18T16:38:38 CEST" duration-ms="49987">
     <groups>
     </groups>
-    <test started-at="2023-06-22T18:22:36 CEST" name="Default test" finished-at="2023-06-22T18:23:01 CEST" duration-ms="24690">
+    <test started-at="2023-07-18T16:37:48 CEST" name="Default test" finished-at="2023-07-18T16:38:38 CEST" duration-ms="49987">
       <class name="vatTest.VATGeneralFlow">
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-06-22T18:22:36 CEST" name="LaunchApplication" finished-at="2023-06-22T18:22:44 CEST" duration-ms="7520" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:37:48 CEST" name="LaunchApplication" finished-at="2023-07-18T16:37:59 CEST" duration-ms="10700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="CaclulateUsingVAT()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-06-22T18:22:44 CEST" name="CaclulateUsingVAT" finished-at="2023-06-22T18:22:52 CEST" duration-ms="8133" status="PASS">
+        <test-method signature="CaclulateUsingPriceInclVAT()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:37:59 CEST" name="CaclulateUsingPriceInclVAT" finished-at="2023-07-18T16:38:03 CEST" duration-ms="4295" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CaclulateUsingVAT -->
-        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-06-22T18:22:52 CEST" name="closingApplication" finished-at="2023-06-22T18:22:52 CEST" duration-ms="285" status="PASS">
+        </test-method> <!-- CaclulateUsingPriceInclVAT -->
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:03 CEST" name="closingApplication" finished-at="2023-07-18T16:38:04 CEST" duration-ms="289" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingApplication -->
-        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-06-22T18:22:52 CEST" name="LaunchApplication" finished-at="2023-06-22T18:22:57 CEST" duration-ms="5159" status="PASS">
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:04 CEST" name="LaunchApplication" finished-at="2023-07-18T16:38:09 CEST" duration-ms="5888" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchApplication -->
-        <test-method signature="LaunchDetails()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-06-22T18:22:57 CEST" name="LaunchDetails" finished-at="2023-06-22T18:23:01 CEST" duration-ms="3294" status="PASS">
+        <test-method signature="CaclulateUsingPricewihtoutVAT(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:09 CEST" name="CaclulateUsingPricewihtoutVAT" data-provider="getData_PriceWihtoutVAT" finished-at="2023-07-18T16:38:14 CEST" duration-ms="4588" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Austria]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[150.00]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[30.00]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[180.00]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CaclulateUsingPricewihtoutVAT -->
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:14 CEST" name="closingApplication" finished-at="2023-07-18T16:38:14 CEST" duration-ms="360" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closingApplication -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:14 CEST" name="LaunchApplication" finished-at="2023-07-18T16:38:20 CEST" duration-ms="5356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="CaclulateUsingVAT()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:20 CEST" name="CaclulateUsingVAT" finished-at="2023-07-18T16:38:29 CEST" duration-ms="8850" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CaclulateUsingVAT -->
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:29 CEST" name="closingApplication" finished-at="2023-07-18T16:38:29 CEST" duration-ms="364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closingApplication -->
+        <test-method is-config="true" signature="LaunchApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:29 CEST" name="LaunchApplication" finished-at="2023-07-18T16:38:34 CEST" duration-ms="5135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchApplication -->
+        <test-method signature="LaunchDetails()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:34 CEST" name="LaunchDetails" finished-at="2023-07-18T16:38:38 CEST" duration-ms="3778" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchDetails -->
-        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-06-22T18:23:01 CEST" name="closingApplication" finished-at="2023-06-22T18:23:01 CEST" duration-ms="239" status="PASS">
+        <test-method is-config="true" signature="closingApplication()[pri:0, instance:vatTest.VATGeneralFlow@2fb3536e]" started-at="2023-07-18T16:38:38 CEST" name="closingApplication" finished-at="2023-07-18T16:38:38 CEST" duration-ms="291" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingApplication -->
